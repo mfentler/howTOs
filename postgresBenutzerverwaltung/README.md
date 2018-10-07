@@ -49,15 +49,19 @@ Man kann nun entscheiden wie man sie erstellt. Für das Beispiel wurde CREATE US
 	GRANT Redakteur TO redakteur1;
 	
 ## Zugriffsberechtigungen
-Zahlungen einsehen und anlegen
+Daten aus den Tabellen lesen
 
 	GRANT SELECT ON ALL TABLES IN SCHEMA public TO <Rolle>; //Für alle Rollen
+Zahlungen einsehen und anlegen
+
 	GRANT INSERT ON payment TO Admin;
 	GRANT INSERT ON payment TO Mitarbeiter;
-	
+Zahlungen ändern und löschen (nur Admin)
+
 	GRANT UPDATE ON payment TO Admin;
 	GRANT DELETE ON payment TO Admin;
-	
+Redakteur und Kunde dürfen die payment Tabelle nicht auslesen.
+
 	REVOKE SELECT ON payment FROM Kunde;
 	REVOKE SELECT ON payment FROM Redakteur;
 	
@@ -69,3 +73,5 @@ Zahlungen einsehen und anlegen
 
 ## Quellen
 [1] https://www.postgresql.org/docs/9.1/static/index.html  
+[2] https://serverfault.com/questions/60508/grant-select-to-all-tables-in-postgresql  
+[3] https://www.postgresql.org/docs/9.1/static/sql-grant.html  

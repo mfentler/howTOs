@@ -66,9 +66,19 @@ Redakteur und Kunde dürfen die payment Tabelle nicht auslesen.
 	REVOKE SELECT ON payment FROM Redakteur;
 Kunde darf eine Spalte nicht sehen -> Grant auf alle Spalten, die er sehen darf.
 
-	GRANT SELECT(film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,rating,last_update,special_features,fulltext) ON film TO Kunde;
+	REVOKE SELECT ON film FROM Kunde;
+	CREATE SCHEMA film_read_only;
+	GRANT USAGE ON SCHEMA film_read_only TO Kunde;
 	
-Überprüfen kann man das mit dem Befehl __\dp__ indem man sich die Permissions anzeigen lässt. Alternativ kann man es auch einfach ausprobieren ob man die Rechte hat.
+	CREATE VIEW film_read_only."film" AS SELECT film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,rating,last_update,special_features,fulltext FROM film;
+	GRANT SELECT ON film_read_only."film" TO Kunde;
+	
+Der Kunde hat nun das Recht alles aus der Tabelle "film" zu lesen außer die Spalte "replacement_cost".  
+Dazu muss er den Select-Befehl aber so ausführen:
+
+	SELECT * FROM film_read_only."film";
+	
+Mit dem Befehl __\dp__ kann man sich die Permissions anzeigen lassen. Alternativ kann man es auch einfach ausprobieren ob man die Rechte hat.
 
 ## Berechtigungen über die Datei "pg_hba.conf"
 
@@ -79,3 +89,4 @@ Kunde darf eine Spalte nicht sehen -> Grant auf alle Spalten, die er sehen darf.
 [2] https://serverfault.com/questions/60508/grant-select-to-all-tables-in-postgresql  
 [3] https://www.postgresql.org/docs/9.1/static/sql-grant.html  
 [4] https://www.pg-forum.de/viewtopic.php?t=3785  
+[5] https://support.chartio.com/knowledgebase/limit-postgresql-user-access-using-schema  

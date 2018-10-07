@@ -21,8 +21,8 @@ __Diesen Pfad auf "/tmp/database/-datei-" legen.__
 Nun wird der Ordner in den /tmp Ordner kopiert, da sonst der psql copy Command kein Zugriffsrecht auf die Dateien hat. Anschließend werden dort dann auch noch die Zugriffsrechte gesetzt.
 
 	cp -r database /tmp/database/
-	chmod -a+rX /tmp/database/
-	chmod -a+rX /tmp/database/*
+	chmod -R a+rX /tmp/database/
+	chmod -R a+rX /tmp/database/*
 Jetzt kann das File in die Datenbank gepipt werden. 
 
 	psql dvdrental < /tmp/database/restore.sql

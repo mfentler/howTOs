@@ -64,6 +64,9 @@ Redakteur und Kunde dürfen die payment Tabelle nicht auslesen.
 
 	REVOKE SELECT ON payment FROM Kunde;
 	REVOKE SELECT ON payment FROM Redakteur;
+Kunde darf eine Spalte nicht sehen
+
+	REVOKE SELECT(replacement_cost) ON film FROM Kunde;
 	
 Überprüfen kann man das mit dem Befehl __\dp__ indem man sich die Permissions anzeigen lässt. Alternativ kann man es auch einfach ausprobieren ob man die Rechte hat.
 

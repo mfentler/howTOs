@@ -81,7 +81,13 @@ Dazu muss er den Select-Befehl aber so ausführen:
 Mit dem Befehl __\dp__ kann man sich die Permissions anzeigen lassen. Alternativ kann man es auch einfach ausprobieren ob man die Rechte hat.
 
 ## Berechtigungen über die Datei "pg_hba.conf"
+Das File liegt hier, "/etc/postgresql/10/main/pg_hba.conf"  
+Verbindung zur Datenbank nur über ssl:
 
+	hostssl all all 0.0.0.0/0 md5
+Bestimmte IP-Adressen nicht zulassen:
+
+	host all all shop-ip-addresse/sn-mask reject
 ## View und Policy
 
 ## Quellen
@@ -90,3 +96,5 @@ Mit dem Befehl __\dp__ kann man sich die Permissions anzeigen lassen. Alternativ
 [3] https://www.postgresql.org/docs/9.1/static/sql-grant.html  
 [4] https://www.pg-forum.de/viewtopic.php?t=3785  
 [5] https://support.chartio.com/knowledgebase/limit-postgresql-user-access-using-schema  
+[6] https://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell  
+[7] https://www.postgresql.org/docs/9.1/static/auth-pg-hba-conf.html  

@@ -25,4 +25,5 @@ Nun wird der Ordner in den /tmp Ordner kopiert, da sonst der psql copy Command k
 	chmod -R a+rX /tmp/database/*
 Jetzt kann das File in die Datenbank gepipt werden. 
 
-	psql dvdrental < /tmp/database/restore.sql
+	psql -h localhost -U mario -W -d dvdrental
+	\i /tmp/database/restore.sql

@@ -1,9 +1,10 @@
 # PostgreSQL Inject SQL File
 
 ## Vorarbeit
-Zuerst wird die Datenbank in psql angelegt und ein User erstellt, der darauf Zugriff hat.
+Zuerst wird die Datenbank in psql angelegt und ein User erstellt, der darauf Zugriff hat (Superuser).
 
 	CREATE USER mario WITH LOGIN PASSWORD '****';
+	GRANT ROLE superuser TO mario;
 	CREATE DATABASE dvdrental OWNER mario;
 	GRANT ALL PRIVILEGES ON DATABASE dvdrental TO mario;
 	

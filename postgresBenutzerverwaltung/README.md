@@ -89,6 +89,19 @@ Bestimmte IP-Adressen nicht zulassen:
 
 	host all all shop-ip-addresse/sn-mask reject
 ## View und Policy
+Ein Marketing Mitarbeiter soll nur auf Kunden und ihre Emails Zugriff haben, die auch aktiv sind. (active=true)
+
+### View
+
+
+### Policy
+Damit Policies auch auf der Tabelle wirken muss man das davor enablen
+
+	ALTER TABLE customer ENABLE ROW LEVEL SECURITY;
+Dann wird sie erstellt
+
+	CREATE POLICY marketing_ma_pol ON customer FOR SELECT TO Kunde USING (active=1); 
+Wenn man nun selected, dann werden nur noch die Kunden angezeigt, die auf active=1 gesetzt sind.
 
 ## Quellen
 [1] https://www.postgresql.org/docs/9.1/static/index.html  
@@ -98,3 +111,4 @@ Bestimmte IP-Adressen nicht zulassen:
 [5] https://support.chartio.com/knowledgebase/limit-postgresql-user-access-using-schema  
 [6] https://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell  
 [7] https://www.postgresql.org/docs/9.1/static/auth-pg-hba-conf.html  
+[8] https://www.postgresql.org/docs/9.5/static/sql-createpolicy.html  

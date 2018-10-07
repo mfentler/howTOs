@@ -15,8 +15,8 @@ Dieses wird mit der Software "Win-SCP" auf die virtuelle Maschine transferiert u
 	
 ## SQL Datei injecten
 In diesem Verzeichnis befindet sich eine "restore.sql" Datei. Diese muss zuerst adaptiert werden.  
-Der $$Path$$ zu den anderen Dateien muss zuerst noch im File gesetzt werden.  
-** Diesen Pfad auf "/tmp/database/-datei-" legen.  ** 
+Der $$Path$$ zu den anderen Dateien __muss zuerst noch im File gesetzt werden.__
+__Diesen Pfad auf "/tmp/database/-datei-" legen.__
 
 Nun wird der Ordner in den /tmp Ordner kopiert, da sonst der psql copy Command kein Zugriffsrecht auf die Dateien hat. Anschließend werden dort dann auch noch die Zugriffsrechte gesetzt.
 

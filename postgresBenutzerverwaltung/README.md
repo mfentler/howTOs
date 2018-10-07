@@ -27,8 +27,12 @@ Diese Rollen kann man Usern geben oder wieder wegnehmen mit folgenden Commands:
 
 	GRANT rolename TO username;
 	REVOKE rolename FROM username;
-Für das Beispiel wird nun für jede Rolle ein User erstellt..
-	CREATE USER kunde1;
+
+## Accounts erstellen
+In Postgres sind Rollen mit der "Login"-Option dasselbe wie User.  
+Man kann nun entscheiden wie man sie erstellt. Für das Beispiel wurde CREATE USER verwendet.
+
+	REATE USER kunde1;
 	GRANT Kunde TO kunde1;
 	
 	CREATE USER mitarbeiter1;
@@ -43,8 +47,6 @@ Für das Beispiel wird nun für jede Rolle ein User erstellt..
 	
 	CREATE USER redakteur1;
 	GRANT Redakteur TO redakteur1;
-## Accounts erstellen
-
 ## Berechtigungen über die Datei "pg_hba.conf"
 
 ## View und Policy

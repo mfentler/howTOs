@@ -34,6 +34,10 @@ Für das Beispiel wird nun für jede Rolle ein User erstellt..
 	CREATE USER mitarbeiter1;
 	GRANT Mitarbeiter TO mitarbeiter1;
 	
+	CREATE USER mitarbeiter2;
+	GRANT Mitarbeiter TO mitarbeiter2;
+	GRANT Admin To mitarbeiter2;
+	
 	CREATE USER admin1;
 	GRANT Admin TO admin1;
 	

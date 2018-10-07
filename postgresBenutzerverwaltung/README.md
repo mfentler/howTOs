@@ -64,9 +64,9 @@ Redakteur und Kunde dürfen die payment Tabelle nicht auslesen.
 
 	REVOKE SELECT ON payment FROM Kunde;
 	REVOKE SELECT ON payment FROM Redakteur;
-Kunde darf eine Spalte nicht sehen
+Kunde darf eine Spalte nicht sehen -> Grant auf alle Spalten, die er sehen darf.
 
-	REVOKE SELECT(replacement_cost) ON film FROM Kunde;
+	GRANT SELECT(film_id,title,description,release_year,language_id,rental_duration,rental_rate,length,rating,last_update,special_features,fulltext) ON film TO Kunde;
 	
 Überprüfen kann man das mit dem Befehl __\dp__ indem man sich die Permissions anzeigen lässt. Alternativ kann man es auch einfach ausprobieren ob man die Rechte hat.
 
@@ -78,3 +78,4 @@ Kunde darf eine Spalte nicht sehen
 [1] https://www.postgresql.org/docs/9.1/static/index.html  
 [2] https://serverfault.com/questions/60508/grant-select-to-all-tables-in-postgresql  
 [3] https://www.postgresql.org/docs/9.1/static/sql-grant.html  
+[4] https://www.pg-forum.de/viewtopic.php?t=3785  

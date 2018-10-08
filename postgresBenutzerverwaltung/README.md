@@ -3,12 +3,12 @@
 In der Übung werden folgende Benutzerrollen angelegt, Berechtigungen erstellt und Beispielaufgaben gelöst.  
 Rollen:
 - Kunde  
-darf die Spalte "replacement_cost" __nicht sehen__
+darf die Spalte "replacement_cost" __nicht sehen__  
 - Mitarbeiter  
-Zahlungen einsehen und anlegen
+Zahlungen einsehen und anlegen  
 - Admin  
 Zahlungen einsehen und anlegen  
-Zahlungen ändern & löschen
+Zahlungen ändern & löschen  
 - Redakteur
 
 ## Rollen erstellen

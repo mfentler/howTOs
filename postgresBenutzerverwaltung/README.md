@@ -1,3 +1,4 @@
+Mario Fentler 5CHIT
 # Benutzerverwaltung in PostgreSQL
 
 In der Übung werden folgende Benutzerrollen angelegt, Berechtigungen erstellt und Beispielaufgaben gelöst.  

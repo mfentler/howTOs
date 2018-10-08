@@ -4,7 +4,7 @@
 Zuerst wird die Datenbank in psql angelegt und ein User erstellt, der darauf Zugriff hat (Superuser).
 
 	CREATE USER mario WITH LOGIN PASSWORD '****';
-	GRANT ROLE superuser TO mario;
+	ALTER USER mario WITH SUPERUSER;
 	CREATE DATABASE dvdrental OWNER mario;
 	GRANT ALL PRIVILEGES ON DATABASE dvdrental TO mario;
 	

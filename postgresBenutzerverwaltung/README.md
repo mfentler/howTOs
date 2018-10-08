@@ -92,7 +92,12 @@ Bestimmte IP-Adressen nicht zulassen:
 Ein Marketing Mitarbeiter soll nur auf Kunden und ihre Emails Zugriff haben, die auch aktiv sind. (active=true)
 
 ### View
-
+Bei der View muss man aufpassen, da hier zwar select * steht, Einträge die allerdings danach erstellt nicht angezeigt werden.
+	
+	CREATE VIEW customers AS
+    SELECT *
+    FROM customer
+    WHERE active = 1;
 
 ### Policy
 Damit Policies auch auf der Tabelle wirken muss man das davor enablen

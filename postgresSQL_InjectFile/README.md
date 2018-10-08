@@ -1,4 +1,6 @@
+Mario Fentler 5CHIT
 # PostgreSQL Inject SQL File
+Hier wird gezeigt wie man aus einem SQL File die Datenbank erstellen kann.
 
 ## Vorarbeit
 Zuerst wird die Datenbank in psql angelegt und ein User erstellt, der darauf Zugriff hat (Superuser).

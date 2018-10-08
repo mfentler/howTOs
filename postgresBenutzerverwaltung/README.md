@@ -106,6 +106,9 @@ Dann wird sie erstellt
 	CREATE POLICY marketing_ma_pol ON customer FOR SELECT TO Kunde USING (active=1); 
 Wenn man nun selected, dann werden nur noch die Kunden angezeigt, die auf active=1 gesetzt sind.
 
+	SELECT * FROM customer;
+	SELECT * FROM customer WHERE active=0; //Jeder andere User bekommt hier was angezeigt
+
 ## Quellen
 [1] https://www.postgresql.org/docs/9.1/static/index.html  
 [2] https://serverfault.com/questions/60508/grant-select-to-all-tables-in-postgresql  

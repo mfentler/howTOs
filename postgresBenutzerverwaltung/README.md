@@ -1,8 +1,8 @@
 Mario Fentler 5CHIT
 # Benutzerverwaltung in PostgreSQL
 
-In der Übung werden folgende Benutzerrollen angelegt, Berechtigungen erstellt und Beispielaufgaben gelöst.  
-Rollen:
+In der Übung werden folgende Benutzerrollen angelegt, Berechtigungen erstellt und Beispielaufgaben gelöst. Überprüfen kann man die Berechtigungen in dem man das mit dem User versucht, was man ihm erlaubt/verboten hat.  
+### Rollen:  
 - Kunde  
 darf die Spalte "replacement_cost" __nicht sehen__  
 - Mitarbeiter  

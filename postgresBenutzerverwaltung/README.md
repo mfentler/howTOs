@@ -1,7 +1,7 @@
 Mario Fentler 5CHIT
 # Benutzerverwaltung in PostgreSQL
 
-In der Übung werden folgende Benutzerrollen angelegt, Berechtigungen erstellt und Beispielaufgaben gelöst. Überprüfen kann man die Berechtigungen in dem man das mit dem User versucht, was man ihm erlaubt/verboten hat.  
+In der Übung werden folgende Benutzerrollen angelegt, Berechtigungen erstellt und Beispielaufgaben gelöst.  
 ### Rollen:  
 - Kunde  
 darf die Spalte "replacement_cost" __nicht sehen__  
@@ -50,6 +50,7 @@ Man kann nun entscheiden wie man sie erstellt. Für das Beispiel wurde CREATE US
 	GRANT Redakteur TO redakteur1;
 	
 ## Zugriffsberechtigungen
+__Die Zugriffsberechtigungen werden mit dem jeweiligen User überprüft, in dem man genau das macht was sie einem erlauben/verbieten. Also Select/Insert/Update/Delete.__  
 Daten aus den Tabellen lesen
 
 	GRANT SELECT ON ALL TABLES IN SCHEMA public TO <Rolle>; //Für alle Rollen

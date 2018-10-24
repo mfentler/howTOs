@@ -42,7 +42,15 @@ Mit __Callbacks__ können solche Aufrufe dann gemacht werden, damit sie den Thre
         console.log(data.toString())
     })
 
-## Node Package Manager (npm)
+#### Funktionen in Funktionen zurückliefern
+    function addFun(x,y){
+        return () => {return "Ergebnis von der addFun: "+(x+y)}
+    }
+
+    var abc = addFun(1,2)
+    console.log(abc())
+
+### Node Package Manager (npm)
 
     npm init
     npm install --save express

@@ -1,0 +1,11 @@
+{
+  "name": "uebung1",
+  "version": "1.0.0",
+  "description": "Uebung1 fuer den Unterricht",
+  "main": "programm1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mario Fentler",
+  "license": "ISC"
+}

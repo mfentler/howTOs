@@ -32,3 +32,10 @@ const fs = require("fs")
 fs.readFile('Hello.txt', (err,data) => {
 	console.log(data.toString())
 })
+
+function addFun(x,y){
+	return () => {return "Ergebnis von der addFun: "+(x+y)}
+}
+
+var abc = addFun(1,2)
+console.log(abc())

@@ -23,3 +23,7 @@
     -> If/While/Variablen __möglich__
     - C-Language Functions (CLF)
     - Internal Functions (IF)
+
+## Funktionsdefinition
+    CREATE FUNCTION preiserhoehung() RETURNS VOID AS '
+    UPDATE speise SET preis = preis * 1.05; ' LANGUAGE SQL;

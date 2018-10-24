@@ -14,7 +14,7 @@ Die geschriebenen Programme werden über die Console mit folgenden Befehlen aufg
     node read-sync.js
     node read-async.js
 
-### Aufgabe 1 - DNS Lookup
+### __Aufgabe 1 - DNS Lookup__
 Für das Programm wird das Node-Modul "dns" benötigt.  
 Die Kommandozeilen Argumente kann man mit "__process.argv[i]__" ansprechen. 
 
@@ -40,7 +40,7 @@ Die Funktion gibt dann einfach nur die URL mit der dazugehörigen IP-Adresse in 
         console.log("Give me some argggggs")
     }
 
-### Aufgabe 2
+### __Aufgabe 2__
 #### Aufgabe 2a - Synchrones Dateiauslesen
 In diesem File werden synchron die Dateien aus dem node_modules Ordner ausgelesen und auf die Console ausgegeben. Dabei wird jede Datei nacheinander abgearbeitet.
 

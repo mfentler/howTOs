@@ -6,6 +6,8 @@
  Dieser Thread arbeitet __parallel__ die Tasks ab.  
  __Vorteile__: wenig RAM nötig, nur ein Thread
 
+![Vergleich](images/pic.jpg)
+
  Aktueller JavaScript Standard: es6
 #### Variablen Deklarierung
 Variablen müssen mit "var" deklariert werden. Ansonsten sind sie global. Wenn man dann in zwei verschiedenen Files die selbe Variable hat überschreiben sie sich. -> Man kann viel Blödsinn damit anstellen.

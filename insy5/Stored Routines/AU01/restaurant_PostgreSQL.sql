@@ -74,3 +74,16 @@ INSERT INTO bestellung VALUES (1, 3, 8);
 INSERT INTO bestellung VALUES (9, 4, 1);
 INSERT INTO bestellung VALUES (9, 5, 1);
 INSERT INTO bestellung VALUES (9, 6, 2);
+
+CREATE FUNCTION preis_var1() RETURNS VOID AS '
+    UPDATE speise SET preis = ceil(preis) - 0.01; ' LANGUAGE SQL;
+
+CREATE FUNCTION preis_var2() RETURNS VOID AS '
+    UPDATE speise SET preis = floor(preis) + 0.99; ' LANGUAGE SQL;
+
+ CREATE FUNCTION preis_var3() RETURNS VOID AS '
+    UPDATE speise SET preis = trunc(preis) + 0.99; ' LANGUAGE SQL;
+
+CREATE FUNCTION loeschePreis() RETURNS VOID AS $$
+    DELETE FROM rechnung WHERE status='bezahlt'; $$
+    LANGUAGE SQL;

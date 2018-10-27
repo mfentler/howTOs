@@ -27,3 +27,9 @@
 ## Funktionsdefinition
     CREATE FUNCTION preiserhoehung() RETURNS VOID AS '
     UPDATE speise SET preis = preis * 1.05; ' LANGUAGE SQL;
+
+### Erstellte Funktion ausführen
+Um die Funktionen auszuführen muss man sie selecten:
+
+    SELECT * FROM preiserhoehung();
+Um die Änderungen dann zu sehen, selected man nochmal die Tabelle, die man mit der Funktion geändert hat.

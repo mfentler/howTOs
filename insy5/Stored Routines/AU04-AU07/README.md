@@ -74,7 +74,7 @@ Gibt eine Zeile zurück und kann in der SELECT Klausel verwendet werden.
     $$ LANGUAGE SQL;
 
     SELECT bezeichnung, preis AS "Netto",
-        bruttoPreis(speise.*) AS "Brutto" 
+        bruttoPreis(speise.*) AS "Brutto"
     FROM speise;
 
 ### Eine Tabelle

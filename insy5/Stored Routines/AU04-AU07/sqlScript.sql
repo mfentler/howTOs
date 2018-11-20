@@ -112,6 +112,9 @@ $$ LANGUAGE SQL;
 SELECT * FROM umsatz(1);
 
 -- AU04 a/b
+-- Erstelle eine weitere Funktion zur Berechnung der MWSt. Zeige von allen Speisen den Brutto-Preis
+-- als Brutto und die darin enthaltene MWSt. als Spalte MWSt an. (AU04a)
+--
 CREATE OR REPLACE FUNCTION bruttoPreis(speise) RETURNS NUMERIC AS $$
     SELECT $1.preis * 1.2;
 $$ LANGUAGE SQL;
@@ -120,6 +123,7 @@ CREATE OR REPLACE FUNCTION mehrwertSteuer(speise) RETURNS NUMERIC AS $$
     SELECT $1.preis * 0.2;
 $$ LANGUAGE SQL;
 
+-- Die Ausgabe Brutto/MWSt soll auf zwei Nachkommastellen beschränkt werden (AU04b)
 -- cast(zahl as decimal (vorkommastellen,nachkommastellen)) -> kürzt das Ergebnis
 SELECT bezeichnung, preis AS "Netto",
     cast(bruttoPreis(speise.*) AS DECIMAL (12,2)) AS "Brutto", 
@@ -128,26 +132,112 @@ SELECT bezeichnung, preis AS "Netto",
 
 
 -- AU05a
+-- Erstelle eine Funktion zur Anzeige der Bezeichnungen der noch nie bestellten Speisen
 -- 
 CREATE OR REPLACE FUNCTION nochNieBestellteSpeisen() RETURNS SETOF TEXT AS $$
-    SELECT speise.bezeichnung FROM speise
+    SELECT speise.bezeichnung AS "Bezeichnung" FROM speise
     WHERE speise.snr NOT IN (SELECT snr FROM bestellung);
 $$ LANGUAGE SQL;
 
-SELECT nochNieBestellteSpeisen() AS "Noch nie bestellte Speisen";
+SELECT * FROM nochNieBestellteSpeisen() AS "Noch nie bestellte Speisen - AU05a";
 
 CREATE TABLE speisenHelper(
-    Bezeichnung TEXT,
-    Nettopreis INTEGER
+    Bezeichnung VARCHAR(255),
+    Nettopreis DECIMAL(6,2)
 );
 
 -- AU05b
+-- Erweitere die aufrufende SELECT-Anweisung so, dass das Ergebnis als Tabelle mit den Spaltenüberschriften "Bezeichnung" und "Nettopreis" angezeigt wird.
+--
 CREATE OR REPLACE FUNCTION nochNieBestellteSpeisen2() RETURNS SETOF speisenHelper AS $$
     SELECT speise.bezeichnung AS "Bezeichnung",speise.preis AS "Nettopreis" FROM speise
     WHERE speise.snr NOT IN (SELECT snr FROM bestellung)
 $$ LANGUAGE SQL;
 
-SELECT nochNieBestellteSpeisen2();
+SELECT * FROM nochNieBestellteSpeisen2();
 
 DROP FUNCTION nochNieBestellteSpeisen2();
 DROP TABLE speisenHelper;
+
+-- AU06
+-- Erstelle zwei Funktionen die in der SELECT-Klausel eingebettet werden,
+-- um damit zusätzliche Spalten je Kellner anzeigen zu können. 
+-- Die aufrufende SELECT-Anweisung soll folgende Ausgabe produzieren:
+--
+-- Kellnername, Anzahl der Rechnungen, Status der spätesten Rechnung
+--
+
+CREATE TABLE kellnerHelper(
+    Kellnername TEXT,
+    AnzahlRechnungen BIGINT,
+    StatusDerLetztenRechnung CHARACTER(255)
+);
+
+CREATE OR REPLACE FUNCTION anzahlRechnung(INTEGER) 
+RETURNS BIGINT AS $$
+SELECT COUNT(rechnung.rnr) 
+FROM rechnung
+WHERE rechnung.knr = $1;
+$$ LANGUAGE SQL;
+
+CREATE OR REPLACE FUNCTION statusLetzteRechnung(INTEGER) RETURNS CHARACTER(255) AS $$
+    SELECT rechnung.status FROM rechnung
+    WHERE rechnung.knr = $1 AND rechnung.datum = (
+        SELECT MAX(rechnung.datum)
+        FROM rechnung WHERE rechnung.knr = $1
+    );
+$$ LANGUAGE SQL;
+
+CREATE OR REPLACE FUNCTION kellnerDaten() RETURNS SETOF kellnerHelper AS $$
+    SELECT kellner.name AS "Kellnername",
+    anzahlRechnung(kellner.knr) AS "AnzahlRechnungen",
+    statusletzteRechnung(kellner.knr) AS "StatusDerLetzenRechnung"
+    FROM kellner;
+$$ LANGUAGE SQL;
+
+SELECT * FROM kellnerDaten();
+
+DROP FUNCTION anzahlRechnung();
+DROP FUNCTION statusLetzteRechnung();
+DROP FUNCTION kellnerDaten();
+DROP TABLE kellnerHelper;
+
+
+-- AU07
+--
+-- Es soll eine Liste der Kellner und deren jeweiliger Tagesumsatz ausgegeben werden.
+-- Dazu werden zuerst noch Dummy Daten eingetragen
+--
+
+INSERT INTO rechnung (rnr, datum, tisch, status, knr) VALUES(10, CURRENT_DATE, 3, 'bezahlt', 2);
+INSERT INTO rechnung (rnr, datum, tisch, status, knr) VALUES(11, CURRENT_DATE, 4, 'bezahlt', 2);
+
+INSERT INTO bestellung (anzahl, rnr, snr) VALUES (4, 10, 1);
+INSERT INTO bestellung (anzahl, rnr, snr) VALUES (6, 10, 2);
+INSERT INTO bestellung (anzahl, rnr, snr) VALUES (2, 11, 3);
+INSERT INTO bestellung (anzahl, rnr, snr) VALUES (1, 10, 4);
+
+CREATE TABLE tagesumsatzHelper(
+    kellnername TEXT,
+    tagesumsatz NUMERIC
+);
+
+-- Hier inner Joins da die Tabellen kombiniert werden müssen
+
+CREATE OR REPLACE FUNCTION tagesumsatz() RETURNS SETOF tagesumsatzHelper AS $$
+    SELECT kellner.name AS "kellnername",
+    SUM(speise.preis) AS "tagesumsatz"
+    FROM kellner
+    INNER JOIN rechnung ON (rechnung.knr = kellner.knr)
+    INNER JOIN bestellung ON (bestellung.rnr = rechnung.rnr)
+    INNER JOIN speise ON (speise.snr = bestellung.snr)
+    WHERE rechnung.datum = CURRENT_DATE AND
+    rechnung.status = 'bezahlt'
+    GROUP BY kellner.name;
+$$ LANGUAGE SQL;
+
+SELECT * FROM tagesumsatz();
+
+DROP FUNCTION tagesumsatz();
+DROP TABLE tagesumsatzHelper;
+

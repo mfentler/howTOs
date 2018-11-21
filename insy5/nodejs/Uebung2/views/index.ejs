@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+        <h1>Schuler</h1>
+        <ul>
+            <% for (var i = 0; i < schueler.length; i++){ %>
+                <li>
+                    <%= schueler[i].vorname%> <%= schueler[i].nachname %>
+                </li> 
+            <% } %>
+            
+        </ul>
+        <h2>Neuer Schueler:</h2>
+        <form method="POST" action="/new">
+            <input type="text" name="vorname" placeholder="Vorname" /></br>
+            <input type="text" name="nachname" placeholder="Nachname" /></br>
+            <input type="submit" value="Speichern" />
+        </form>
+    </body>
+</html>

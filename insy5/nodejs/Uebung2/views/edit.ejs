@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1> Edit Schueler</h1>
+            <table class="table table-striped table-hover">
+                <tr><th>Vorname</th><th>Nachname</th><th>Lieblingsfach</th><th>Klasse</th><th></th></tr>
+                
+                <tr>
+                    <form method="POST" action="/edit/1">
+                        <td> <input type="text" name="vorname" value="<%= schueler.vorname %>" /></br</td>
+                        <td> <input type="text" name="nachname" value="<%= schueler.nachname %>" /></br></td>
+                        <td>
+                            <select class="form" id="sel2" name="lieblingsfach">
+                                <option>Mathe</option>
+                                <option>Deutsch</option>
+                                <option>Englisch</option>
+                                <option>INSY</option>
+                                <option>SEW</option>
+                                <option>SYT</option>
+                                <option>MEDT</option>
+                                <option>Sport</option>
+                                <option>Religion</option>
+                                <option>WIRE</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form" id="sel1" name="klasse">
+                                <option>5AHIT</option>
+                                <option>5BHIT</option>
+                                <option>5CHIT</option>
+                            </select>
+                        </td>
+                        <td> <input type="hidden" id="id" name="id" value="<%= schueler._id %>" />
+                            <input class="btn btn-primary" type="submit" value="Save Changes"/></td>
+                    </form>   
+                </tr>
+                
+            </table>
+        </div>
+    </body>
+</html>

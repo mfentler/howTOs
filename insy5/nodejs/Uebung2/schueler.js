@@ -1,5 +1,6 @@
 const express = require('express')
 const MongoClient = require('mongodb').MongoClient
+const mongoDB = require('mongodb')
 //Damit ich die Formulare als JSON bekomme
 const bodyParser = require('body-parser')
 
@@ -14,13 +15,49 @@ app.get('/', (req,res)=>{
         if(err){
             console.log(err)
         }else{
-            console.log(result)
             res.render('index.ejs', {schueler:result})
         }
     })
 })
 
+app.post('/edit', (req,res)=>{
+    db.collection('schueler').find({_id: mongoDB.ObjectID(req.body.id)}).toArray((err,result)=>{
+        if(err){
+            console.log(err)
+        }else{
+            res.render('edit.ejs', {schueler:result[0]})
+        }
+    })
+})
+
+app.post('/edit/:status', (req,res)=>{
+    db.collection('schueler').updateOne({_id: mongoDB.ObjectID(req.body.id)},{$set: {"vorname":req.body.vorname,"nachname":req.body.nachname,"lieblingsfach":req.body.lieblingsfach,"klasse":req.body.klasse}}, (err,result)=>{
+        if(err){
+            console.log(err)
+        }else{
+            console.log('Update successfull ..\nredirecting ..')
+
+            res.redirect('/')
+        }
+    })
+})
+
+
+
+app.post('/delete', (req,res)=>{
+    console.log(req.body.id)
+    db.collection('schueler').deleteOne( { _id: mongoDB.ObjectID(req.body.id)}, (err,result)=>{
+        if(err){
+            console.log(err)
+        }else{
+            console.log('User geloescht')
+            res.redirect('/')
+        }
+    })
+})
+
 app.post('/new', (req,res)=>{
+
     db.collection('schueler').insertOne(req.body, (err, result) =>{
         if(err){
             console.log('Fehler beim Speichern vom Schueler: ')

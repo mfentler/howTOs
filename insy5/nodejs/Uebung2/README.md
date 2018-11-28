@@ -10,3 +10,9 @@ In die Datei __index.ejs__ (ejs steht für extended JavaScript) wird der HTML Co
 Man kann auch JavaScript Code, der __auf dem Server ausgeführt__ werden soll hinschreiben. Das macht man so:  
 
     <% for (var i = 0; i < %>
+
+## Sources
+https://stackoverflow.com/questions/4932928/remove-by-id-in-mongodb-console  
+https://stackoverflow.com/questions/736590/add-new-attribute-element-to-json-object-using-javascript  
+https://www.w3schools.com/tags/att_input_type_hidden.asp  
+https://docs.mongodb.com/manual/reference/method/db.collection.updateOne/  

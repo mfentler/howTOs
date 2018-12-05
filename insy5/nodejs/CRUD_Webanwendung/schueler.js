@@ -10,6 +10,10 @@ app.use(bodyParser.urlencoded({extended:false}))
 
 let db
 
+app.get('/:class', (req,res) => {
+    
+})
+
 app.get('/', (req,res)=>{
     db.collection('schueler').find().toArray((err,result)=>{
         if(err){

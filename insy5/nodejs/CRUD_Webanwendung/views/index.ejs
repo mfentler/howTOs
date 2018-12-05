@@ -11,6 +11,20 @@
         <div class="container">
         <h1> Schueler</h1>
             <table class="table table-striped table-hover">
+                <form class="form" id="filterClassForm" method="POST">
+                    <tr>
+                    Nach Klasse filtern: 
+                    <select class="form-control" id="filterClass" name="filterclass">
+                        <option>Alle</option>
+                        <option>5AHIT</option>
+                        <option>5BHIT</option>
+                        <option>5CHIT</option>
+                    </select>
+                    </tr>
+                    <tr>
+                        <input class="btn btn-primary" type="submit" value="Filter"/><br><br>
+                    </tr>
+                </form>
                 <tr><th>Vorname</th><th>Nachname</th><th>Lieblingsfach</th><th>Klasse</th><th></th><th></th></tr>
                     <% for (var i = 0; i < schueler.length; ++i) { %>
 
@@ -62,5 +76,11 @@
             <input class="btn btn-primary" type="submit" value="Add User"/>
             </form>
         </div>
+<script>
+    $('#filterClassForm').submit(function(){
+    var formAction = $("#filterClass").val();
+    $("#filterClassForm").attr("action", "/search/" + formAction);
+});
+</script>
     </body>
 </html>

@@ -24,6 +24,14 @@ app.get('/', (req,res)=>{
     })
 })
 
+app.post('/search/:class', (req,res) => {
+	if(req.body.filterclass == "Alle"){
+		console.log('alle klassen')
+	}else{
+		console.log(req.body.filterclass)
+	}
+})
+
 app.post('/edit', (req,res)=>{
     db.collection('schueler').find({_id: mongoDB.ObjectID(req.body.id)}).toArray((err,result)=>{
         if(err){

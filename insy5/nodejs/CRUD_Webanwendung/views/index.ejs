@@ -6,6 +6,7 @@
     <style>
 
     </style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -15,7 +16,7 @@
                     <tr>
                     Nach Klasse filtern: 
                     <select class="form-control" id="filterClass" name="filterclass">
-                        <option>Alle</option>
+                        <option selected="selected">Alle</option>
                         <option>5AHIT</option>
                         <option>5BHIT</option>
                         <option>5CHIT</option>
@@ -77,9 +78,9 @@
             </form>
         </div>
 <script>
-    $('#filterClassForm').submit(function(){
-    var formAction = $("#filterClass").val();
-    $("#filterClassForm").attr("action", "/search/" + formAction);
+$("#filterClass").change(function() {
+  var action = $(this).val();
+  $("#filterClassForm").attr("action", "/search/" + action);
 });
 </script>
     </body>

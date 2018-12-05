@@ -23,12 +23,43 @@ app.get('/', (req,res)=>{
         }
     })
 })
+app.get('/search/:class', (req,res) => {
+	if(req.body.filterclass == "Alle" || res.body == null){
+		db.collection('schueler').find().toArray((err,result)=>{
+			if(err){
+				console.log(err)
+			}else{
+				res.render('index.ejs', {schueler:result})
+			}
+		})
+	}else{
+		db.collection('schueler').find({"klasse":req.body.filterclass}).toArray((err,result) => {
+			if(err){
+				console.log(err)
+			}else{
+				res.render('index.ejs', {schueler:result})
+			}
+		})
+	}
+})
 
 app.post('/search/:class', (req,res) => {
 	if(req.body.filterclass == "Alle"){
-		console.log('alle klassen')
+		db.collection('schueler').find().toArray((err,result)=>{
+			if(err){
+				console.log(err)
+			}else{
+				res.render('index.ejs', {schueler:result})
+			}
+		})
 	}else{
-		console.log(req.body.filterclass)
+		db.collection('schueler').find({"klasse":req.body.filterclass}).toArray((err,result) => {
+			if(err){
+				console.log(err)
+			}else{
+				res.render('index.ejs', {schueler:result})
+			}
+		})
 	}
 })
 

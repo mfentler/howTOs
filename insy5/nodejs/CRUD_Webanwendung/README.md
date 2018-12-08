@@ -16,6 +16,8 @@ Es kann auch JavaScript Code, der __auf dem Server ausgeführt__ werden soll (ä
     <% for (var i = 0; i < schueler.length; ++i) { %>
     Mit den <%= %>
 
+<br>
+
 ## __Aufgabendurchführung__
 Als erster Schritt werden im js File Konstanten erstellt.  
 
@@ -27,6 +29,8 @@ Als erster Schritt werden im js File Konstanten erstellt.
     //Damit ich die Formulare als JSON bekomme
     const bodyParser = require('body-parser')
     app.use(bodyParser.urlencoded({extended:false}))
+
+<br>
 
 ### __MongoDB - mlab__
 Als Datenbank wird mongoDB verwendet, welches über die Webseite von m-lab.com erreichbar ist. Dort erstellt man sich eine neue Datenbank und eine Collection.  
@@ -46,6 +50,8 @@ Anschließend kann man sich im Server über den MongoClient damit verbinden.
 })
 Sofern keine Fehler beim Verbinden mit mlab auftreten, kann der Server mit __app.listen(\<port>)__ gestartet werden.
 
+<br>
+
 ### __Routing__
 Im Server werden einzelnen Routen verschiedene Methoden zugewiesen. Die zum auslesen aller Schüler, die standardmäßig über '/' aufgerufen wird, könnte so aussehen:  
 
@@ -61,6 +67,9 @@ Im Server werden einzelnen Routen verschiedene Methoden zugewiesen. Die zum ausl
 Dabei wird über __db.collection(\<name\>)..find().toArray()__ auf die Dokumente in der Datenbank zugegriffen und diese dann an die Webseite weitergeleitet.  
 __toArray()__ wird verwendet, da es sich hier um mehere Ergebnisse handeln kann.
 
+<br>
+<br>
+
 ### __Anzeige auf der Webseite__
 Die Webseite, in dem Fall index.ejs und edit.ejs(mehr zu dieser später) enthalten den HTML-Code der Webseite. Neben Formularen werden dort auch JavaScript funktionen eingebunden.
 
@@ -73,15 +82,19 @@ Die Webseite, in dem Fall index.ejs und edit.ejs(mehr zu dieser später) enthalt
     </script>
 Dieses Script wird allerdings nur gebraucht um die action vom Formular auf die ausgewählte Listen-Option umzuschreiben. Diese Funktion wird für die Suchanforderung gerbaucht.  
 
-## Funktionen der Webseite
-- ### Schüler auflisten
+<br>
+
+- ## __Schüler auflisten__
 Wie die Schüler aus der Datenbank ausgelesen und ausgegeben werden wurde vorher schon beschrieben.  
 
 <kbd>
 <img src="images/erg1.png">
 </kbd>
 
-- ### Schüler erstellen
+<br>
+<br>
+
+- ## __Schüler erstellen__
 Neue Benutzer können über ein Formular auf der Webseite angelegt werden. Nachdem der User dieses Formular submitted wird der Inhalt in einem JSON-Format an den Server weitergeleitet. Mit der Methode __db.collection(\<name\>).insertOne()__ können neue Einträge in die Datenbank eingefügt werden.    
 
     app.post('/new', (req,res)=>{
@@ -100,7 +113,10 @@ Nachdem der neue Schüler erstellt wurde ist er in der Liste auffindbar.
 <img src="images/added.png">
 </kbd>
 
-- ### Schueler editieren  
+<br>
+<br>
+
+- ## __Schueler editieren__  
 Man kann die Werte eines Schuelers auch ändern. Dazu klickt man auf den _EDIT_ Button. Dieser beinhaltet die id vom User, mit der der Server dann die restlichen Werte von der MongoDB abfragen kann und auf einer neuen Seite (edit.ejs) als editierbare Textfelder anzeigen kann.  
 
     <form class="form" action="/edit" method="POST">
@@ -142,7 +158,10 @@ Sofern man dort dann auf den _SAVE Changes_ Button drückt wird man zurück auf 
 <img src="images/edited.png">
 </kbd>
 
-- ### Delete Schueler  
+<br>
+<br>
+
+- ## __Schueler löschen__
 Zu guter letzt kann ein Schueler auch noch über den Button delete aus der MongoDB geloescht werden.  
 Dazu wird die Methode __db.collection(\<name\>).deleteOne()__ verwendet.  
 
@@ -151,7 +170,11 @@ Dazu wird die Methode __db.collection(\<name\>).deleteOne()__ verwendet.
 </kbd>
 Wie man hier sehen kann wurde der Schueler gelöscht.
 
-- ### Nach Klasse filtern
+<br>
+<br>
+<br>
+
+- ## __Nach Klasse filtern__
 Als letzter Schritt wurde eine Filtermöglichkeit eingefügt. Man kann über eine Liste auswählen welche Schüler (Klasse) man sehen möchte.  
 Sofern nicht "Alle" als Option ausgewählt wurde, werden nur noch die Schüler aus der richtigen Klassen angezeigt.  
 
@@ -183,13 +206,19 @@ Das Resultat, wenn man nach der Klasse _5AHIT_ filtert sieht dann so aus:
 <image src="images/filtered.png">
 </kbd>
 
-## Deployen
+<br>
+<br>
+
+## __Deployen__
 Um das Programm zu starten muss man Node.js installiert haben. Danach startet man den Server mit folgendem Befehl:  
 
     node schueler.js
 Anschließend ist der Server über __127.0.0.1:8080__ erreichbar.
 
-## Fehler die während der Übung aufgetreten sind
+<br>
+<br>
+
+## __Fehler die während der Übung aufgetreten sind__
 - #1  
 
 Ich habe viel Zeit damit verbracht zu eruieren wieso die JQuery Funktion nicht funktioniert.  
@@ -201,11 +230,13 @@ Ich habe viel Zeit damit verbracht zu eruieren wieso die JQuery Funktion nicht f
 
 Damit man ein Schueler Objekt in der MongoDB über die ID finden kann muss diese ID, die man vom JSON-Request bekommt, in ein __mongoDB.ObjectID__ Objekt umgewandelt werden.
 
-## Sources
-https://stackoverflow.com/questions/4932928/remove-by-id-in-mongodb-console  
-https://stackoverflow.com/questions/736590/add-new-attribute-element-to-json-object-using-javascript  
-https://www.w3schools.com/tags/att_input_type_hidden.asp  
-https://docs.mongodb.com/manual/reference/method/db.collection.updateOne/  
-https://stackoverflow.com/questions/42396025/express-cannot-post-quotes  
-https://mongodb.github.io/node-mongodb-native/markdown-docs/queries.html  
-https://www.w3schools.com/jquery/jquery_get_started.asp
+<br>
+
+## __Sources__
+[1] - [https://stackoverflow.com/questions/4932928/remove-by-id-in-mongodb-console](https://stackoverflow.com/questions/4932928/remove-by-id-in-mongodb-console)  
+[2] - [https://stackoverflow.com/questions/736590/add-new-attribute-element-to-json-object-using-javascript](https://stackoverflow.com/questions/736590/add-new-attribute-element-to-json-object-using-javascript)  
+[3] - [https://www.w3schools.com/tags/att_input_type_hidden.asp](https://www.w3schools.com/tags/att_input_type_hidden.asp)  
+[4] - [https://docs.mongodb.com/manual/reference/method/db.collection.updateOne/](https://docs.mongodb.com/manual/reference/method/db.collection.updateOne/)  
+[5] - [https://stackoverflow.com/questions/42396025/express-cannot-post-quotes](https://stackoverflow.com/questions/42396025/express-cannot-post-quotes)  
+[6] - [https://mongodb.github.io/node-mongodb-native/markdown-docs/queries.html](https://mongodb.github.io/node-mongodb-native/markdown-docs/queries.html)  
+[7] - [https://www.w3schools.com/jquery/jquery_get_started.asp](https://www.w3schools.com/jquery/jquery_get_started.asp)

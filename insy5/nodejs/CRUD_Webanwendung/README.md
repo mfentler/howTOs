@@ -44,6 +44,7 @@ Anschließend kann man sich im Server über den MongoClient damit verbinden.
         })
     }
 })
+Sofern keine Fehler beim Verbinden mit mlab auftreten, kann der Server mit __app.listen(\<port>)__ gestartet werden.
 
 ### __Routing__
 Im Server werden einzelnen Routen verschiedene Methoden zugewiesen. Die zum auslesen aller Schüler, die standardmäßig über '/' aufgerufen wird, könnte so aussehen:  
@@ -143,13 +144,62 @@ Sofern man dort dann auf den _SAVE Changes_ Button drückt wird man zurück auf 
 
 - ### Delete Schueler  
 Zu guter letzt kann ein Schueler auch noch über den Button delete aus der MongoDB geloescht werden.  
-Dazu wird die Methode __db.collection(\<name\>).deleteOne()__ verwendet.
+Dazu wird die Methode __db.collection(\<name\>).deleteOne()__ verwendet.  
+
+<kbd>
+<image src="images/deleted.png">
+</kbd>
+Wie man hier sehen kann wurde der Schueler gelöscht.
+
+- ### Nach Klasse filtern
+Als letzter Schritt wurde eine Filtermöglichkeit eingefügt. Man kann über eine Liste auswählen welche Schüler (Klasse) man sehen möchte.  
+Sofern nicht "Alle" als Option ausgewählt wurde, werden nur noch die Schüler aus der richtigen Klassen angezeigt.  
+
+Für die Funktionalität des Filtern wird eine post Methode verwendet, da sie vom Formular auf der Webseite über POST aufgerufen wird. In dieser Methode wird gefiltert ob alle Schüler aus der MongoDB ausgelesen werden sollen oder nur die mit einer bestimmten Klasse. 
+
+    app.post('/search/:class', (req,res) => {
+        if(req.body.filterclass == "Alle"){
+            db.collection('schueler').find().toArray((err,result)=>{
+                if(err){
+                    console.log(err)
+                }else{
+                    res.render('index.ejs', {schueler:result})
+                }
+            })
+        }else{
+            db.collection('schueler').find({"klasse":req.body.filterclass}).toArray((err,result) => {
+                if(err){
+                    console.log(err)
+                }else{
+                    res.render('index.ejs', {schueler:result})
+                }
+            })
+        }
+    })
+
+Das Resultat, wenn man nach der Klasse _5AHIT_ filtert sieht dann so aus:  
+
+<kbd>
+<image src="images/filtered.png">
+</kbd>
 
 ## Deployen
 Um das Programm zu starten muss man Node.js installiert haben. Danach startet man den Server mit folgendem Befehl:  
 
     node schueler.js
 Anschließend ist der Server über __127.0.0.1:8080__ erreichbar.
+
+## Fehler die während der Übung aufgetreten sind
+- #1  
+
+Ich habe viel Zeit damit verbracht zu eruieren wieso die JQuery Funktion nicht funktioniert.  
+-> Man muss natürlich JQuery laden damit es funktioniert (face-palm)
+
+    \<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">\</script>
+
+- #2  
+
+Damit man ein Schueler Objekt in der MongoDB über die ID finden kann muss diese ID, die man vom JSON-Request bekommt, in ein __mongoDB.ObjectID__ Objekt umgewandelt werden.
 
 ## Sources
 https://stackoverflow.com/questions/4932928/remove-by-id-in-mongodb-console  

@@ -89,7 +89,7 @@ app.post('/delete', (req,res)=>{
         if(err){
             console.log(err)
         }else{
-            console.log('User geloescht')
+            console.log('Schueler geloescht')
             res.redirect('/')
         }
     })
@@ -102,7 +102,7 @@ app.post('/new', (req,res)=>{
             console.log('Fehler beim Speichern vom Schueler: ')
             console.log(err)
         }else{
-            console.log('User gespeichert')
+            console.log('Schueler gespeichert')
             res.redirect('/')
         }
     })

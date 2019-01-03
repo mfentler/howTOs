@@ -1,4 +1,6 @@
 # Betriebliche Informationssysteme
+__Mitschrift vom  05.12.2018__  
+---
 => sind große Systeme, die in Unternehmen zum Einsatz kommen.  
 
 __Vorteile :__  
@@ -29,3 +31,7 @@ Planung für Güter
 __I:__ Oft ist das ERP das Hauptsystem in das die übrigen Systeme integriert sind. (Module)  
 __II:__ Das CRM bildet alle Vorgänge in Sachen Kunden ab. Das reicht vom Webshop (E-Commerce) über das Retourenmanagement (Reklamationen, ... also im weitesten Sinn die Kundenzufriedenheit, Aquisitor, Kundenbindung, ...)  
 __III:__ SCM/E-Procurement
+
+__Mitschrift vom 19.12.2018__  
+---  
+

@@ -47,7 +47,7 @@ INSERT INTO rechnung VALUES (1, '2013-03-07', 1, 'bezahlt', 1);
 INSERT INTO rechnung VALUES (2, '2013-03-07', 2, 'offen', 2);
 INSERT INTO rechnung VALUES (3, '2013-03-07', 1, 'gedruckt', 3);
 INSERT INTO rechnung VALUES (4, '2013-03-07', 1, 'gedruckt', 1);
-INSERT INTO rechnung VALUES (5, '2013-03-07', 1, 'bezahlt', 1);
+INSERT INTO rechnung VALUES (5, CURRENT_DATE, 1, 'bezahlt', 1);
 INSERT INTO rechnung VALUES (6, '2013-03-07', 2, 'offen', 2);
 
 DROP TABLE IF EXISTS bestellung CASCADE;

@@ -33,7 +33,7 @@ Diese Rollen kann man Usern geben oder wieder wegnehmen mit folgenden Commands:
 In Postgres sind Rollen mit der "Login"-Option dasselbe wie User.  
 Man kann nun entscheiden wie man sie erstellt. Für das Beispiel wurde CREATE USER verwendet.
 
-	REATE USER kunde1 WITH PASSWORD 'kunde123';
+	CREATE USER kunde1 WITH PASSWORD 'kunde123';
 	GRANT Kunde TO kunde1;
 	
 	CREATE USER mitarbeiter1 WITH PASSWORD 'ma123';

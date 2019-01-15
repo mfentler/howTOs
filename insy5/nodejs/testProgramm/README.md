@@ -13,44 +13,47 @@
 Variablen müssen mit "var" deklariert werden. Ansonsten sind sie global. Wenn man dann in zwei verschiedenen Files die selbe Variable hat überschreiben sie sich. -> Man kann viel Blödsinn damit anstellen.
 
 #### Verschiedene Funktionsdefinitionen:
+```js
+function add5(x){
+    return x+5
+}
 
-    function add5(x){
-	    return x+5
-    }
+var add10 = function(x){
+    return x+10
+}
 
-    var add10 = function(x){
-        return x+10
-    }
+var add15 = (x) => {
+    return x+15
+}
 
-    var add15 = (x) => {
-        return x+15
-    }
-
-    function execute(fun, wert){
-        console.log("Ergebnis:"+fun(wert))
-    }
-
+function execute(fun, wert){
+    console.log("Ergebnis:"+fun(wert))
+}
+```
 ### Verschiedene Commands
 __Datei aus Filesystem einlesen:__  
 Mit require lädt man eine Library und weist sie einer Variable zu.
-
-    const fs = require('fs')
+```js
+const fs = require('fs')
+```
 Mit __Callbacks__ können solche Aufrufe dann gemacht werden, damit sie den Thread nicht blockieren.  
-
-    fs.readFile('Hello.txt', (err,data) => {
-        if(err) throw exception
-        console.log(data.toString())
-    })
-
+```js
+fs.readFile('Hello.txt', (err,data) => {
+    if(err) throw exception
+    console.log(data.toString())
+})
+```
 #### Funktionen in Funktionen zurückliefern
-    function addFun(x,y){
-        return () => {return "Ergebnis von der addFun: "+(x+y)}
-    }
+```js
+function addFun(x,y){
+    return () => {return "Ergebnis von der addFun: "+(x+y)}
+}
 
-    var abc = addFun(1,2)
-    console.log(abc())
-
+var abc = addFun(1,2)
+console.log(abc())
+```
 ### Node Package Manager (npm)
-
-    npm init
-    npm install --save express
+```bash
+npm init
+npm install --save express
+```

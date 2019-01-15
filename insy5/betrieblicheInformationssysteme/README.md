@@ -32,6 +32,10 @@ __I:__ Oft ist das ERP das Hauptsystem in das die übrigen Systeme integriert si
 __II:__ Das CRM bildet alle Vorgänge in Sachen Kunden ab. Das reicht vom Webshop (E-Commerce) über das Retourenmanagement (Reklamationen, ... also im weitesten Sinn die Kundenzufriedenheit, Aquisitor, Kundenbindung, ...)  
 __III:__ SCM/E-Procurement
 
-__Mitschrift vom 19.12.2018__  
----  
+__ABC - Güter:__  
+A: Hoher Wert, geringe Stückzahl (Bsp: spezielles Metallstück für einen Auspuff)  
+B: Geringer Wert, mittlere Stückzahl  
+C: Niedriger Wert, hohe Stückzahl (Bsp: Schrauben und Muttern)
 
+ __JIT - Just in time:__  
+Güter werden nur in der Menge bestellt, in der sie auch für die Aufträge benötigt werden. Gelieferte Materialen lagern nicht lange und werden schnell weiterverarbeitet.

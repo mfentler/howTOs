@@ -13,10 +13,11 @@
     - Stored Procedure CALL bla(param1, param2, param3, ...);  
     CALL xxxx()
     - Stored Functions -> eingebettet in SELECT  
-
-            SELECT xxxx()
-            SELECT I,D,U
-            SELECT * FROM bla();
+    ```sql
+    SELECT xxxx()
+    SELECT I,D,U
+    SELECT * FROM bla();
+    ```
 - __Postgres:__  
     Eingebettet in SQL (wie SF bei MySQL)
     - __Query Language Functions (QLF)__ ... "plain" SQL  
@@ -27,55 +28,81 @@
     - Internal Functions (IF)
 
 ## Funktionsdefinition
-    CREATE FUNCTION preiserhoehung() RETURNS VOID AS '
-    UPDATE speise SET preis = preis * 1.05; ' LANGUAGE SQL;
+```sql
+CREATE FUNCTION preiserhoehung() RETURNS VOID AS '
+UPDATE speise SET preis = preis * 1.05; ' LANGUAGE SQL;
+```
 
 ### Erstellte Funktion ausführen
 Um die Funktionen auszuführen muss man sie selecten:
-
-    SELECT * FROM preiserhoehung();
+```sql
+SELECT * FROM preiserhoehung();
+```
 Um die Änderungen dann zu sehen, selected man nochmal die Tabelle, die man mit der Funktion geändert hat.
 
 ## Funktionen löschen
-
-    DROP FUNCTION xxxx();
-    DROP FUNCTION xxxx(INT);
+```sql
+DROP FUNCTION xxxx();
+DROP FUNCTION xxxx(INT);
+```
 Das kann sehr lästig werden. Aus diesem Grund wird die Syntax für die Erstellung von Funktionen abgeändert =>
 
 ## Funktionen erstellen V2
-
-    CREATE OR REPLACE xxx() RETURNS VOID AS $$...$$ LANG=SQL;
+```sql
+CREATE OR REPLACE xxx() RETURNS VOID AS $$...$$ LANG=SQL;
+```
 
 ### Funktionsvariablen
 Dazu muss man bei der Funktion, in der QLF, nur die Typen angeben da es keine Variablen gibt. Stattdessen werden Stellungsparameter verwendet.
-
-    ... FUNCTION ()
-    ... FUNCTION (INT)
-    ... FUNCTION (INT,NUMERIC,TEXT,...)
+```sql
+... FUNCTION ()
+... FUNCTION (INT)
+... FUNCTION (INT,NUMERIC,TEXT,...)
+```
 
 #### Stellungsparameter
 Die Paramater können über $1,$2,$3 angesprochen werden.
 
+---
 ## Rückgabewerte
-### Void
+
+### __Void__
 Gibt nichts zurück.
+```sql
+CREATE OR REPLACE FUNCTION VoidFunction RETURNS VOID AS $$
+    ... 
+$$ LANGUAGE SQL; 
+```
 
-### Ein Wert
+### __Ein Wert__
 Gibt einen Wert zurück. Kann im SELECT, WHERE, HAVING, ORDER BY und LIMIT eingesetzt werden.
+```sql
+CREATE OR REPLACE FUNCTION WertFunction RETURNS <VOID/INTEGER/TEXT/NUMERIC> AS $$
+    ... 
+$$ LANGUAGE SQL; 
+```
 
-### Eine Spalte
+### __Eine Spalte__
 Gibt eine Spalte zurück und kann im SELECT und WHERE verwendet werden.
+```sql
+CREATE OR REPLACE FUNCTION SpalteFunction RETURNS SET OF <VOID/INTEGER/TEXT/NUMERIC> AS 
+$$
+    ... 
+$$ LANGUAGE SQL; 
+```
 
-### Eine Zeile
+### __Eine Zeile__
 Gibt eine Zeile zurück und kann in der SELECT Klausel verwendet werden.
+```sql
+CREATE OR REPLACE FUNCTION ZeileFunction RETURNS <Custom-Tabellenname> AS $$
+... 
+$$ LANGUAGE SQL; 
+```
 
-    CREATE OR REPLACE FUNCTION bruttoPreis(speise)
-    RETURNS NUMERIC AS $$ SELECT $1.preis * 1.2;
-    $$ LANGUAGE SQL;
-
-    SELECT bezeichnung, preis AS "Netto",
-        bruttoPreis(speise.*) AS "Brutto" 
-    FROM speise;
-
-### Eine Tabelle
+### __Eine Tabelle__
 Gibt eine ganze Tabelle zurück und kann in der SELECT-Klausel und in der FROM Anweisung verwendet werden.
+```sql
+CREATE OR REPLACE FUNCTION TableFunction RETURNS SETOF ... AS $$
+... 
+$$ LANGUAGE SQL; 
+```

@@ -80,6 +80,11 @@ Gibt einen Wert zurück. Kann im SELECT, WHERE, HAVING, ORDER BY und LIMIT einge
 CREATE OR REPLACE FUNCTION WertFunction RETURNS <VOID/INTEGER/TEXT/NUMERIC> AS $$
     ... 
 $$ LANGUAGE SQL; 
+
+CREATE OR REPLACE FUNCTION wert(INTEGER) RETURNS TEXT AS $$
+    SELECT name FROM kellner
+    WHERE knr = $1;
+$$ LANGUAGE SQL;
 ```
 
 ### __Eine Spalte__
@@ -89,6 +94,10 @@ CREATE OR REPLACE FUNCTION SpalteFunction RETURNS SET OF <VOID/INTEGER/TEXT/NUME
 $$
     ... 
 $$ LANGUAGE SQL; 
+
+CREATE OR REPLACE FUNCTION spalte() RETURNS SETOF TEXT AS $$
+    SELECT name FROM kellner;
+$$ LANGUAGE SQL;
 ```
 
 ### __Eine Zeile__
@@ -97,6 +106,12 @@ Gibt eine Zeile zurück und kann in der SELECT Klausel verwendet werden.
 CREATE OR REPLACE FUNCTION ZeileFunction RETURNS <Custom-Tabellenname> AS $$
 ... 
 $$ LANGUAGE SQL; 
+
+CREATE OR REPLACE FUNCTION zeile(INTEGER) RETURNS SETOF kellner AS $$
+    SELECT * FROM kellner
+    WHERE knr = $1
+    LIMIT 1;
+$$ LANGUAGE SQL;
 ```
 
 ### __Eine Tabelle__
@@ -105,4 +120,8 @@ Gibt eine ganze Tabelle zurück und kann in der SELECT-Klausel und in der FROM A
 CREATE OR REPLACE FUNCTION TableFunction RETURNS SETOF ... AS $$
 ... 
 $$ LANGUAGE SQL; 
+
+CREATE OR REPLACE FUNCTION tabellen() RETURNS SETOF kellner AS $$
+    SELECT * FROM kellner;
+$$ LANGuage SQL;
 ```

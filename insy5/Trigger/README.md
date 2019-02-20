@@ -33,3 +33,20 @@ CREATE TRIGGER <trigger name>
         <trigger_verarbeitung>
     END;
 ```
+
+### Trigger Definition für das obere Beispiel:
+```SQL
+DELIMITER //
+
+CREATE TRIGGER t1
+    AFTER INSERT
+    ON warenkorb
+    FOR EACH ROW
+BEGIN
+    UPDATE artikel SET anzvorhanden = anzvorhanden - anzgewünscht;
+END; //
+
+DELIMITER ;
+```
+
+![Trigger](trigger.jpg)

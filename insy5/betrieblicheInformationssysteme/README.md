@@ -39,3 +39,12 @@ C: Niedriger Wert, hohe Stückzahl (Bsp: Schrauben und Muttern)
 
  __JIT - Just in time:__  
 Güter werden nur in der Menge bestellt, in der sie auch für die Aufträge benötigt werden. Gelieferte Materialen lagern nicht lange und werden schnell weiterverarbeitet.
+
+__Mitschrift vom 30.01.2019 - Papyrus__  
+---
+__I. Klassisch:__  
+Aufgabe nach Aufgabe  
+__II. Teildynamisch:__  
+Es gibt Zwischenschritte zwischen den Aufgaben und Aufgaben können parallel ablaufen. (Es ist egal wann es gemacht wird, Hauptsache es wird gemacht, es wird dabei gewartet bis das fertig ist bevor man dann mit den nächsten Schritten beginnt)  
+__III. Dynamisch:__  
+Ich definiere mir Ziele und möglicherweise Teilziele. Wie man zu den Zielen kommt ist frei.

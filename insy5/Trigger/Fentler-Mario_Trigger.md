@@ -111,28 +111,44 @@ angebotenen Speisen dokumentiert werden. Erstelle alle erforderlichen Definition
 ```SQL
 DROP TABLE IF EXISTS statistik;
 CREATE TABLE statistik(
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    datum DATE,
+    datum DATE PRIMARY KEY,
     anzahl INTEGER
 );
 
-DROP TRIGGER IF EXISTS trigger_d;
+DROP TRIGGER IF EXISTS trigger_d_1;
 DELIMITER //
-CREATE TRIGGER trigger_d
+CREATE TRIGGER trigger_d_1
     AFTER INSERT
     ON speise
     FOR EACH ROW
     BEGIN
-        INSERT INTO statistik (datum,anzahl)
+        REPLACE INTO statistik (datum,anzahl)
         SELECT
-            CURRENT_TIME(),count(*)
+            CURRENT_DATE(),count(*)
+        FROM speise;
+    END; //
+
+DROP TRIGGER IF EXISTS trigger_d_2//
+CREATE TRIGGER trigger_d_2
+    AFTER DELETE
+    ON speise
+    FOR EACH ROW
+    BEGIN
+        REPLACE INTO statistik (datum,anzahl)
+        SELECT
+            CURRENT_DATE(),count(*)
         FROM speise;
     END; //
 DELIMITER ;
 
+-- Testing
 INSERT INTO speise(snr,bezeichnung,preis) VALUES (9, 'Test menue', 14.5);
 SELECT * FROM statistik;
 INSERT INTO speise(snr,bezeichnung,preis) VALUES (10, 'Pizza', 3.99);
+SELECT * FROM statistik;
+
+-- Now deleting one speise
+DELETE FROM speise WHERE snr = 10;
 SELECT * FROM statistik;
 
 ```

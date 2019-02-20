@@ -2,10 +2,10 @@
 Mario Fentler 5CHIT  
 20.02.2019  
 
-## Deployment
+## ___Deployment___
 Das File trigger.sql ausführen. Das File erstellt nach jedem Trigger die Datenbank neu um so für korrekte Testdaten zu sorgen. Weiters werden auch immer die Trigger getestet.
 
-## Praxis
+## ___Praxis___
 ### a)
 Wenn bei einer zu speichernden rechnung die Spalte datum den Wert NULL hat, soll sie jeweils durch den aktuellen Wert CURRENT_DATE ersetzt werden.  
 ```SQL
@@ -138,25 +138,36 @@ SELECT * FROM statistik;
 ```
 
 ### e)
-Die ENGINE=MYISAM gestattet die Verwendung von Triggern. Realisiere eine 1:NBeziehung mit der ENGINE=MYISAM, d.h. das FK-Constraint und die CASCADEVerarbeitung sollen mittels Triggern nachgebildet werden.
+Die ENGINE=MYISAM gestattet die Verwendung von Triggern. Realisiere eine 1:N Beziehung mit der ENGINE=MYISAM, d.h. das FK-Constraint und die CASCADE Verarbeitung sollen mittels Triggern nachgebildet werden.
 
-## Theorie
-### -) 
-Sind mehrere Trigger für dasselbe Aktivierungs-Event (z.B. BEFORE INSERT ON xxx) zulässig?
+## ___Theorie___
+### Frage 1)
+___Sind mehrere Trigger für dasselbe Aktivierungs-Event (z.B. BEFORE INSERT ON xxx) zulässig?___  
 
-### -)
-Können innerhalb BEGIN … END mehrere SQL-Anweisungen definiert werden?
+Nein, man kann nicht zwei Trigger auf die selbe Tabelle mit dem selben Event haben. Eine Außnahme ist, wenn der eine Trigger "tiefer" geht. Und sich beispielsweise auf eine Spalte der Tabelle bezieht.
+___
+### Frage 2)
+___Können innerhalb BEGIN … END mehrere SQL-Anweisungen definiert werden?___  
 
-### -)
-Können Trigger die Anweisungen START TRANSACTION, COMMIT oder ROLLBACK
-enthalten?
+Ja, das funktioniert wie mit den Stored Procedures/Functions.
+___
+### Frage 3)
+___Können Trigger die Anweisungen START TRANSACTION, COMMIT oder ROLLBACK
+enthalten?___
 
-### -)
-Was bewirkt das Constraint NOT NULL in Kombination mit einem BEFORE-Trigger?
-IF NEW.xxx IS NULL THEN SET NEW.xxx = ... END IF;  
+Nein, _"The trigger cannot use statements that explicitly or implicitly begin or end a transaction such as START TRANSACTION, COMMIT, or ROLLBACK."_ - [Quelle](http://ftp.nchu.edu.tw/MySQL/doc/refman/5.0/en/trigger-syntax.html)
+___
+### Frage 4)
 
-### -)
-Kann in einem Trigger auf Datensätze einer anderen Tabelle zugegriffen werden?  
+___Was bewirkt das Constraint NOT NULL in Kombination mit einem BEFORE-Trigger?
+IF NEW.xxx IS NULL THEN SET NEW.xxx = ... END IF;___  
 
-### -)
+Das NOT NULL constraint würde einen Fehler werfen wenn ein Datensatz mit einem NULL eingefügt werden würde. Da wir allerdings einen Trigger verwenden, der die Werte davor überprüft und auf einen default Wert setzt wenn sie NULL sind, ist das __Constraint redundant__.
+___
+### Frage 5)
+___Kann in einem Trigger auf Datensätze einer anderen Tabelle zugegriffen werden?___  
+
+Ja, siehe Seite 3 im PDF.
+___
+### Frage 6)
 ![Tabelle](trigger.jpg)

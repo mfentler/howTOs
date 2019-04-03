@@ -1,4 +1,4 @@
-# Trigger
+# Trigger in MySQL
 Mario Fentler 5CHIT  
 20.02.2019  
 ```SQL

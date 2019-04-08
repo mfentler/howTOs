@@ -1,7 +1,8 @@
 
-DROP DATABASE IF EXISTS restaurant;
+\c template1
+DROP DATABASE restaurant;
 CREATE DATABASE restaurant;
-USE restaurant;
+\c restaurant
 
 DROP TABLE IF EXISTS kellner CASCADE;
 CREATE TABLE kellner (

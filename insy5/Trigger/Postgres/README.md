@@ -35,6 +35,9 @@ CREATE OR REPLACE FUNCTION setCurrentDate() RETURNS TRIGGER AS $$
 $$ LANGUAGE SQL;
 ```
 
+## Ausführen der Aufgaben
+Zum Testen der Trigger -> einfach die SQL Files ausführen. Diese erstellen zuerst die Datenbank neu, erstellen dann die Funktionen und Trigger und testen dann mit Select-Klauseln, ob das Ergebis stimmt.
+
 ## Quellen
 [1] jjj  
 [2] [https://stackoverflow.com/questions/7726237/postgresql-trigger-function-with-parameters](https://stackoverflow.com/questions/7726237/postgresql-trigger-function-with-parameters)

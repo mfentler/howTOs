@@ -75,7 +75,7 @@ INSERT INTO bestellung VALUES (9, 6, 2);
 
 -- Reset finished, ready for trigger tasks ..
 
--- Aufgabe AU09b
+-- Aufgabe AU10b
 -- Autor: Mario Fentler
 DROP TABLE IF EXISTS preisaenderung;
 CREATE TABLE preisaenderung(

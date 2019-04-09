@@ -146,16 +146,53 @@ SELECT * FROM preisaenderung;
 __Lösungsvorgang:__  
 
 
+__Hilfstabelle:__  
+Die Einträge werden in diese Tabelle geschrieben.
+```SQL
+DROP TABLE IF EXISTS bestellstorno;
+CREATE TABLE bestellstorno(
+    datum DATE,
+    anzahl SMALLINT,
+    rnr         INTEGER,
+    snr         INTEGER,
+    PRIMARY KEY (rnr, snr),
+    FOREIGN KEY (rnr) REFERENCES rechnung (rnr)
+                    ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (snr) REFERENCES speise (snr)
+                    ON UPDATE CASCADE ON DELETE CASCADE
+);
+```
+
 __Funktion:__
 ```sql
+CREATE OR REPLACE FUNCTION updateBestellstorno() RETURNS TRIGGER AS $$
+    BEGIN
+        INSERT INTO bestellstorno (datum,anzahl,rnr,snr)
+        VALUES (CURRENT_DATE,OLD.anzahl,OLD.rnr,OLD.snr);
+        RETURN OLD;
+    END;
+$$ LANGUAGE PLPGSQL;
 ```
 
 __Trigger:__ 
 ```SQL
+DROP TRIGGER IF EXISTS trigger_c ON bestellung;
+CREATE TRIGGER trigger_c
+    BEFORE DELETE
+    ON bestellung
+    FOR EACH ROW
+    EXECUTE PROCEDURE updateBestellstorno();
 ```
 
 __Testen:__
 ```sql
+-- Testing
+SELECT * FROM bestellung WHERE rnr = 4;
+DELETE FROM bestellung WHERE rnr = 4;
+-- Datensatz wurde geloescht
+SELECT * FROM bestellung WHERE rnr = 4;
+-- Neuer Datensatz in der Stornotabelle
+SELECT * FROM bestellstorno;
 ```
 
 ## AU10 - d)

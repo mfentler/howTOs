@@ -75,7 +75,7 @@ INSERT INTO bestellung VALUES (9, 6, 2);
 
 -- Reset finished, ready for trigger tasks ..
 
--- Aufgabe AU09c
+-- Aufgabe AU10c
 -- Autor: Mario Fentler
 
 DROP TABLE IF EXISTS bestellstorno;

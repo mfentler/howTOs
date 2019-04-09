@@ -107,12 +107,14 @@ CREATE TRIGGER trigger_b
     FOR EACH ROW
     EXECUTE PROCEDURE notePriceChange();
 
-
--- update preis pute natur
+-- Testing
+-- SELECT standard preis
 SELECT * FROM speise WHERE snr = 4;
+-- update preis pute natur
 UPDATE speise SET preis = 5.5 WHERE snr = 4;
 -- show in table
 SELECT * FROM preisaenderung;
 -- UPDATE preis nochmal um zu sehen ob in der preisänderung das richtige gespeichert wurde
 UPDATE speise SET preis = 10 WHERE snr = 4;
+-- show in table again
 SELECT * FROM preisaenderung;

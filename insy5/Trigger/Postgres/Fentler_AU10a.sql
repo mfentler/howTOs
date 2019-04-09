@@ -92,6 +92,7 @@ CREATE TRIGGER trigger_a
     WHEN (NEW.datum IS NULL)
     EXECUTE PROCEDURE setCurrentDate();
 
+-- Testing
 SELECT * FROM rechnung;
 INSERT INTO rechnung(rnr,datum,tisch,status,knr) VALUES (7,NULL,2,'offen',1);
 SELECT * FROM rechnung WHERE rnr = 7;

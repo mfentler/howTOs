@@ -198,16 +198,62 @@ SELECT * FROM bestellstorno;
 ## AU10 - d)
 ---
 __Lösungsvorgang:__  
+Eine Funktion und zwei Trigger erstellen, die diese Funktion aufrufen.
 
+__Hilfstabelle:__  
+```SQL
+DROP TABLE IF EXISTS statistik;
+CREATE TABLE statistik(
+    datum DATE PRIMARY KEY,
+    anzahl INTEGER
+);
+```
 
 __Funktion:__
 ```sql
+CREATE OR REPLACE FUNCTION updateStatistik() RETURNS TRIGGER AS $$
+    BEGIN
+        IF EXISTS(SELECT * FROM statistik WHERE datum=CURRENT_DATE) THEN
+            UPDATE statistik
+            SET anzahl=(SELECT count(*) FROM speise);
+        ELSE
+            INSERT INTO statistik (datum,anzahl)
+            SELECT
+                CURRENT_DATE,count(*)
+            FROM speise;
+        END IF;
+        RETURN OLD;
+    END;
+$$ LANGUAGE PLPGSQL;
 ```
 
 __Trigger:__ 
 ```SQL
+DROP TRIGGER IF EXISTS trigger_d_1 ON speise;
+CREATE TRIGGER trigger_d_1
+    AFTER INSERT
+    ON speise
+    FOR EACH ROW
+    EXECUTE PROCEDURE updateStatistik();
+
+DROP TRIGGER IF EXISTS trigger_d_2 ON speise;
+CREATE TRIGGER trigger_d_2
+    AFTER DELETE
+    ON speise
+    FOR EACH ROW
+    EXECUTE PROCEDURE updateStatistik();
 ```
 
 __Testen:__
 ```sql
+-- Testing
+SELECT * FROM statistik;
+INSERT INTO speise(snr,bezeichnung,preis) VALUES (9, 'Test menue', 14.5);
+SELECT * FROM statistik;
+INSERT INTO speise(snr,bezeichnung,preis) VALUES (10, 'Pizza', 3.99);
+SELECT * FROM statistik;
+
+-- Now deleting one speise
+DELETE FROM speise WHERE snr = 10;
+SELECT * FROM statistik;
 ```

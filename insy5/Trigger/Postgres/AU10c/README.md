@@ -144,7 +144,7 @@ SELECT * FROM preisaenderung;
 ## AU10 - c)
 ---
 __Lösungsvorgang:__  
-
+Insert in die Storno Tabelle. Wenn es das schon gibt, dann update.
 
 __Hilfstabelle:__  
 Die Einträge werden in diese Tabelle geschrieben.

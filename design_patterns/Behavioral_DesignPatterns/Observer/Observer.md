@@ -50,7 +50,7 @@ Hier wird konkret implementiert, kein anderer Weg für Veränderung/Erweiterung 
   * Man erhält auch keine Aktualisierungen mehr
 
 
-![Zeitungsabo](../Bilder/Observer_erklaerung2.JPG)
+![Zeitungsabo](../../Bilder/Observer_erklaerung2.JPG)
 #### Erklärung
 * Wie bei Zeitungsabo beschrieben kann die Notification jederzeit beendet werden
 * Nur die Observer-Objects bekommen Notifications
@@ -58,7 +58,7 @@ Hier wird konkret implementiert, kein anderer Weg für Veränderung/Erweiterung 
 
 ## Lösung
 ### Design
-![Observer_UML](../Bilder/ObserverPattern_aufbau2.JPG)
+![Observer_UML](../../Bilder/ObserverPattern_aufbau2.JPG)
 #### Erklärung
 ##### Observable
 Interface das zur Registrierung als Observer oder zum Entfernen als Observer verwendet wird.
@@ -76,7 +76,7 @@ Jede Klasse die Observer-Interface implementiert. Jeder Observer registriert sic
 #### Projekt Wetterstation
 Hier das UML Diagramm zu "Wetterstation". Hier wurd noch ein Interface DisplayElement erschaffen. Es dient dazu immer neue Displays implementieren zu können.
 
-![Wetterstation](../Bilder/ObserverPattern_aufbau_beispiel.JPG)
+![Wetterstation](../../Bilder/ObserverPattern_aufbau_beispiel.JPG)
 
 ### Code-Beispiel
 [Hier](https://github.com/amessner-tgm/design_patterns/tree/master/Observer/Beispiel) sieht man wie des Abo-System funktioniert. Es werden immer alle Subscriber benachrichtigt.

@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e0eec52-77a9-4c36-b393-0390b8eeb2af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/SimpleFactory/Beispiel/Circle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/SimpleFactory/Beispiel/FactoryPatternDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/SimpleFactory/Beispiel/Rectangle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/SimpleFactory/Beispiel/Shape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/SimpleFactory/Beispiel/ShapeFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/SimpleFactory/Beispiel/Square.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/AbstractFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/AbstractFactoryPatternDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/Blue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/Circle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/Color.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/ColorFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/FactoryProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/Green.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/Rectangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/Red.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/ShapeFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/Beispiel/Square.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -179,7 +186,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557408640671" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557408640715" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -231,16 +238,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557397129280</updated>
-      <workItem from="1557397130557" duration="3207000" />
+      <workItem from="1557397130557" duration="3503000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3207000" />
+    <option name="totallyTimeSpent" value="3503000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />

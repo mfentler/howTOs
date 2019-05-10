@@ -50,7 +50,7 @@ So sieht das __Umkehrung der Abhängigkeiten Prinzip__ aus.
 ### Design
 ![Simple Factory Aufbau](../../Bilder/SimpleFactory_aufbau.JPG)
 
-Man sieht ShapeFactory kann ein Shape erstellen. Dieses kann Circle, Square oder Rectangle sein. Es können leicht  Subtypen hinzugefügt/geändert werden.
+Man sieht ShapeFactory kann ein example1.Shape erstellen. Dieses kann example1.Circle, Square oder example1.Rectangle sein. Es können leicht  Subtypen hinzugefügt/geändert werden.
 
 ### Code-Beispiel
 [Hier](https://github.com/amessner-tgm/design_patterns/tree/master/Factory/Simple/Beispiel) sieht man ein Beispiel zum SimpleFactory Pattern

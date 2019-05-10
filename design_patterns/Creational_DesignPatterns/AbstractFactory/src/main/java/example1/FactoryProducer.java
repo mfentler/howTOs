@@ -1,3 +1,5 @@
+package example1;
+
 public class FactoryProducer {
     public static AbstractFactory generateFactory(boolean round){
         if(!round){

@@ -1,3 +1,5 @@
+package example1;
+
 public class RoundObjectFactory extends AbstractFactory {
     @Override
     Shape generateObject(String type) {

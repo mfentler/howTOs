@@ -1,6 +1,6 @@
 public class Cube implements Shape {
     @Override
     public void draw(){
-        System.out.println("Cube");
+        System.out.println("example1.Cube");
     }
 }

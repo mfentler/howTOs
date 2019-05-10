@@ -1,3 +1,5 @@
+package example1;
+
 public class Demo {
     public static void main(String[] args){
         AbstractFactory factory = FactoryProducer.generateFactory(false);

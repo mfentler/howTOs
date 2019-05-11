@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e0eec52-77a9-4c36-b393-0390b8eeb2af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/Duck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/PizzaStore.asta.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/StrategyDuckUML.asta.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/Decorator.md" beforeDir="false" afterPath="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/Decorator.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/design_patterns.iml" beforeDir="false" afterPath="$PROJECT_DIR$/design_patterns.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,22 +26,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="51" />
+          <entry key="java" value="58" />
+          <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="51" />
+          <entry key="JAVA" value="58" />
+          <entry key="Markdown" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2486" />
+          <entry key="java" value="3342" />
+          <entry key="md" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2486" />
+          <entry key="JAVA" value="3342" />
+          <entry key="Markdown" value="16" />
         </counts>
       </usages-collector>
     </session>
@@ -47,73 +53,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/FlyBehaviour.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/FlyWithWings.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-              <folding>
-                <element signature="e#106#107#0" expanded="true" />
-                <element signature="e#153#154#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/CantFly.java">
+        <entry file="file://$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Cappuchino.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
               <folding>
-                <element signature="e#100#101#0" expanded="true" />
-                <element signature="e#148#149#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/Silent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-              <folding>
-                <element signature="e#104#105#0" expanded="true" />
-                <element signature="e#145#146#0" expanded="true" />
+                <element signature="e#90#91#0" expanded="true" />
+                <element signature="e#126#127#0" expanded="true" />
+                <element signature="e#101#102#0" expanded="true" />
+                <element signature="e#125#126#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/Duck.java">
+        <entry file="file://$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Demo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-              <folding>
-                <element signature="e#113#114#0" expanded="true" />
-                <element signature="e#139#140#0" expanded="true" />
-                <element signature="e#169#170#0" expanded="true" />
-                <element signature="e#193#194#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/Demo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            <state relative-caret-position="255">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -134,15 +92,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/src/main/java/GreenCircle.java" />
-        <option value="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/src/main/java/RedCube.java" />
-        <option value="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/src/main/java/BlueCube.java" />
-        <option value="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/src/main/java/FactoryProducer.java" />
-        <option value="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/src/main/java/AngularObjectFactory.java" />
-        <option value="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/src/main/java/RoundObjectFactory.java" />
-        <option value="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/src/main/java/Circle.java" />
-        <option value="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/src/main/java/AbstractFactory.java" />
-        <option value="$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/src/main/java/Demo.java" />
         <option value="$PROJECT_DIR$/Behavioral_DesignPatterns/Observer/Observer.md" />
         <option value="$PROJECT_DIR$/Behavioral_DesignPatterns/Observer/src/main/java/basic_example/Observer.java" />
         <option value="$PROJECT_DIR$/Behavioral_DesignPatterns/Observer/src/main/java/basic_example/ConcreteSubject1.java" />
@@ -185,6 +134,15 @@
         <option value="$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/GummiEnte.java" />
         <option value="$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/Demo.java" />
         <option value="$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/Duck.java" />
+        <option value="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/Decorator.md" />
+        <option value="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Caffee.java" />
+        <option value="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Coffee.java" />
+        <option value="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Topping.java" />
+        <option value="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Espresso.java" />
+        <option value="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Milk.java" />
+        <option value="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Sugar.java" />
+        <option value="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Cappuchino.java" />
+        <option value="$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Demo.java" />
       </list>
     </option>
   </component>
@@ -217,54 +175,54 @@
             <path>
               <item name="design_patterns" type="b2602c69:ProjectViewProjectNode" />
               <item name="design_patterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Behavioral_DesignPatterns" type="462c0819:PsiDirectoryNode" />
+              <item name="Structural_DesignPatterns" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="design_patterns" type="b2602c69:ProjectViewProjectNode" />
               <item name="design_patterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Behavioral_DesignPatterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="Structural_DesignPatterns" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="design_patterns" type="b2602c69:ProjectViewProjectNode" />
               <item name="design_patterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Behavioral_DesignPatterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="Structural_DesignPatterns" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorator" type="462c0819:PsiDirectoryNode" />
               <item name="Beispiel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="design_patterns" type="b2602c69:ProjectViewProjectNode" />
               <item name="design_patterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Behavioral_DesignPatterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="Structural_DesignPatterns" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="design_patterns" type="b2602c69:ProjectViewProjectNode" />
               <item name="design_patterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Behavioral_DesignPatterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Strategy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="design_patterns" type="b2602c69:ProjectViewProjectNode" />
-              <item name="design_patterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Behavioral_DesignPatterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="Structural_DesignPatterns" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="design_patterns" type="b2602c69:ProjectViewProjectNode" />
               <item name="design_patterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Behavioral_DesignPatterns" type="462c0819:PsiDirectoryNode" />
-              <item name="Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="Structural_DesignPatterns" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="design_patterns" type="b2602c69:ProjectViewProjectNode" />
+              <item name="design_patterns" type="462c0819:PsiDirectoryNode" />
+              <item name="Structural_DesignPatterns" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="kaffeehaus" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -278,7 +236,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557573270541" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557585739404" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -297,26 +255,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Demo (3)">
+  <component name="RunManager" selected="Application.Demo (4)">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pizzaStore.Client" />
       <module name="design_patterns" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="pizzaStore.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Demo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="basic_example.Demo" />
-      <module name="design_patterns" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="basic_example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -350,6 +295,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Demo (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="kaffeehaus.Demo" />
+      <module name="design_patterns" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kaffeehaus.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="example1.Demo" />
       <module name="design_patterns" />
@@ -359,18 +317,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Demo" />
-      <item itemvalue="Application.Demo (1)" />
       <item itemvalue="Application.Demo (2)" />
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Demo (3)" />
+      <item itemvalue="Application.Demo (4)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Demo (4)" />
         <item itemvalue="Application.Demo (3)" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Demo" />
         <item itemvalue="Application.Demo (2)" />
-        <item itemvalue="Application.Demo (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -389,12 +347,12 @@
       <workItem from="1557473601649" duration="3304000" />
       <workItem from="1557509718152" duration="2047000" />
       <workItem from="1557511792515" duration="3304000" />
-      <workItem from="1557571402342" duration="1495000" />
+      <workItem from="1557571402342" duration="3908000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17990000" />
+    <option name="totallyTimeSpent" value="20403000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -439,48 +397,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/src/main/java/Color.java" />
-    <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Observer/Observer.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1326">
-            <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Creational_DesignPatterns/AbstractFactory/FactoryAbstract.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Observer/Beispiel/Subject.java" />
-    <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Observer/src/main/java/Demo_BasicExample.java" />
-    <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Observer/src/main/java/basic_example/ConcreteSubjectFloat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Observer/src/main/java/basic_example/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Observer/src/main/java/sensor_example/Subject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Observer/src/main/java/basic_example/Subject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -766,13 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/FlyBehaviour.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -801,6 +710,104 @@
             <element signature="e#169#170#0" expanded="true" />
             <element signature="e#193#194#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Coffee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding>
+            <element signature="e#122#123#0" expanded="true" />
+            <element signature="e#156#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Structural_DesignPatterns/Decorator/Decorator.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Behavioral_DesignPatterns/Strategy/src/main/java/example/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Espresso.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding>
+            <element signature="e#86#87#0" expanded="true" />
+            <element signature="e#131#132#0" expanded="true" />
+            <element signature="e#99#100#0" expanded="true" />
+            <element signature="e#123#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Sugar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="e#112#113#0" expanded="true" />
+            <element signature="e#138#139#0" expanded="true" />
+            <element signature="e#107#108#0" expanded="true" />
+            <element signature="e#134#135#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Milk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <element signature="e#104#105#0" expanded="true" />
+            <element signature="e#131#132#0" expanded="true" />
+            <element signature="e#182#183#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#175#176#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Topping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Cappuchino.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding>
+            <element signature="e#90#91#0" expanded="true" />
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#101#102#0" expanded="true" />
+            <element signature="e#125#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Structural_DesignPatterns/Decorator/src/main/java/kaffeehaus/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
         </state>
       </provider>
     </entry>

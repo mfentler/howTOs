@@ -34,11 +34,11 @@ transparent
   * Heiße Milch, Soja, Schokolade, Milchschaum … und monatlich werden es mehr!
 * Bestehendes System wurde ursprünglich folgendermaßen designt ...
 
-![Aufbau Sternback](../Bilder/Decorator_kontext_beispiel1.JPG)
+![Aufbau Sternback](../../Bilder/Decorator_kontext_beispiel1.JPG)
 
 Jedoch wenn man dieses Bestellsystem erweitern möchte kommt das raus...
 
-![Aufbau Sternback Erweiterung](../Bilder/Decorator_kontext_beispiel2.JPG)
+![Aufbau Sternback Erweiterung](../../Bilder/Decorator_kontext_beispiel2.JPG)
 
 Man sieht es viel zu __unübersichtlich__ und __nicht veränderbar__ falls etwas geändert werden sollte.
 
@@ -48,7 +48,7 @@ Man sieht es viel zu __unübersichtlich__ und __nicht veränderbar__ falls etwas
 3. dekorieren es mit einem Milchschaum-Objekt,
 4. rufen die Methode preis() auf und stützen uns auf Delegierung, um den Preis für die Zutaten hinzuzufügen.
 
-![Erklärung_Sternback](../Bilder/Decorator_kontext_beispiel3.JPG)
+![Erklärung_Sternback](../../Bilder/Decorator_kontext_beispiel3.JPG)
 
 Wie man sieht "dekoriert" man quasi. Man legt immer ein weiteres Objekt darüber und am Ende bekommt man richtigen Preis.
 
@@ -56,13 +56,13 @@ Wie man sieht "dekoriert" man quasi. Man legt immer ein weiteres Objekt darüber
 
 #### Neues Design
 
-![Neues Design Sterback](../Bilder/Decorator_kontext_beispiel4.JPG)
+![Neues Design Sterback](../../Bilder/Decorator_kontext_beispiel4.JPG)
 
 ## Lösung
 
 ### Design
 
-![Decorator Aufbau](../Bilder/Decorator_aufbau.JPG)
+![Decorator Aufbau](../../Bilder/Decorator_aufbau.JPG)
 
 #### CommonInterface
 Abstrakte Komponenten Klasse

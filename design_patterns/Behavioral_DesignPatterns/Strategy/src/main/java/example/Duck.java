@@ -1,8 +1,8 @@
 package example;
 
 public class Duck {
-    QuackBehaviour qb;
-    FlyBehaviour fb;
+    protected QuackBehaviour qb;
+    protected FlyBehaviour fb;
 
     public void performQuack(){
         qb.quack();

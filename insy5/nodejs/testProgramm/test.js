@@ -15,8 +15,7 @@ var add10 = function (x) {
     return x + 10
 }
 
-var add15 = (x) =
->
+var add15 = (x) =>
 {
     return x + 15
 }
@@ -31,13 +30,12 @@ execute(add5, 42)
 //require lädt Library und weist sie dann einer Variable zu
 const fs = require("fs")
 
-fs.readFile('Hello.txt', (err, data) = > {
+fs.readFile('Hello.txt', (err, data) => {
     console.log(data.toString())
 })
 
 function addFun(x, y) {
-    return () =
->
+    return () =>
     {
         return "Ergebnis von der addFun: " + (x + y)
     }
